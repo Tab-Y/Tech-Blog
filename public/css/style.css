@@ -1,0 +1,34 @@
+:root {
+    --darkbkg : rgb(70, 66, 9);
+    --midbkg: rgb(175, 131, 50);
+    --lightbkg: rgb(248, 195, 174);
+    --accent: rgb(117, 8, 180);
+    --white: rgb(237, 224, 243);
+    --fontstyle1: 'Anton', sans-serif;
+    --fontstyle2: 'Signika Negative', sans-serif;
+
+}
+
+body {
+    background-color: var(--lightbkg);
+}
+
+header {
+    background-color: var(--midbkg);
+    font-family: var(--fontstyle1);
+}
+
+.custom-card {
+    display: flex;
+    background-color: var(--lightbkg);
+    font-family: var(--fontstyle2);
+    border: 2px solid var(--midbkg);
+}
+h2 {
+    background-color: var(--midbkg);
+}
+
+/* 
+.details {
+
+} */
