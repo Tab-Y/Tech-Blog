@@ -3,6 +3,14 @@ const sequelize = require('../config/connections');
 
 class Comment extends Model { }
 
+// comment - is ALL comments put on the post
+
+// 1 user has many posts
+// 1 user has many comments
+// 1 post belongs to 1 user
+// 1 post has many comments
+// 1 comment belongs to 1 user
+
 Comment.init(
     {
         id: {

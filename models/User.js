@@ -3,6 +3,15 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connections');
 
+// The person viewing, creating and commenting
+
+// 1 user has many posts
+// 1 user has many comments
+// 1 post belongs to 1 user
+// 1 post has many comments
+// 1 comment belongs to 1 user
+
+
 class User extends Model {
     checkPassword(loginPass) {      // user checks for password before getting data
         return bcrypt.compareSync(loginPass, this.password)
