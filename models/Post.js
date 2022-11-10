@@ -18,18 +18,14 @@ Post.init(
         comment: {
             type: DataTypes.STRING,
             references: {
-                model: 'comments'
-            }
+                model: 'comments',
+                key: 'comment',
+            },
         },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
-        },
-        date_updated: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            dialectTypes: DataTypes.NOW,
         },
         user_id: {
             type: DataTypes.INTEGER,
