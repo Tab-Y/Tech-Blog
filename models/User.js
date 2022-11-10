@@ -1,7 +1,7 @@
 // Same file as mini-project for user 
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connections');
 
 class User extends Model {
     checkPassword(loginPass) {      // user checks for password before getting data

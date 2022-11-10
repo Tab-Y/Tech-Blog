@@ -10,7 +10,8 @@
     "sequelize": "^6.3.5"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
   "name": "1-014_module-14-tech-blog",
   "description": "Module 14 challenge",
