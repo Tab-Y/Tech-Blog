@@ -18,9 +18,13 @@
     <header class="mx-auto">
         <nav class="nav">
             <ul class="row">
+                {{#if loggedIn}}
                 <li href="" class="button">Home</li>
                 <li href="" class="button">Dashboard</li>
+                <li href="" class="button">Logout</li>
+                {{else}}
                 <li href="" class="button">Login</li>
+                {{/if}}
             </ul>
         </nav>
         <h1>
@@ -28,36 +32,9 @@
         </h1>
     </header>
     <main>
-        <!-- {{{body}}} -->
-        <ul>
-            <li class="card custom-card">
-                <h2>
-                    What is important
-                    <span class="details"> posted by + timestamp</span>
-                </h2>
-                <p>
-                    fine details as to what is important
-                </p>
-            </li>
-            <li class="card custom-card">
-                <h2>
-                    What is important
-                    <span> posted by + timestamp</span>
-                </h2>
-                <p>
-                    fine details as to what is important
-                </p>
-            </li>
-            <li class="card custom-card">
-                <h2>
-                    What is important
-                    <span> posted by + timestamp</span>
-                </h2>
-                <p>
-                    fine details as to what is important
-                </p>
-            </li>
-        </ul>
+        
+        {{{body}}}
+       
     </main>
 </body>
 </html>
