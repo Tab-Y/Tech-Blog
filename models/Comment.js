@@ -26,7 +26,7 @@ Comment.init(
         date_updated: {
             type: DataTypes.DATE,
             allowNull: false,
-            dialectTypes: DataTypes.NOW,
+            defaultValue: DataTypes.NOW,
         },
         user_id: {
             type: DataTypes.INTEGER,
