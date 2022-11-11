@@ -6,7 +6,7 @@
                     <a class="nav-link button" href="/dashboard" id="dashboard-button">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" id="logout">Logout</a>
+                    <a class="nav-link button" href="/" id="logout">Logout</a>
                 </li>
                 {{else}}
                 <li class="nav-item">
@@ -19,3 +19,10 @@
             <a class="nav-link button" href="/" id="home-button">The Tech Blog</a>
         </h1>
     </header>
+{{#if logged_in}}
+<nav class="nav flex-column ml-3 col-1">
+
+    <button type="button" class="btn btn-lg m-1" id="create-post" href="/post">Create Post</button>
+
+</nav>
+{{/if}}
