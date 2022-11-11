@@ -5,30 +5,25 @@ const User = require("./User.js");
 // the specific assosiations go in this file
 User.hasMany(Post, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE'
+    onDelete: 'CASCADE'
 });
 
 User.hasMany(Comment, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE'
-});
-
-Post.hasMany(Comment, {
-    foreignKey: 'post_id',
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE'
+    onDelete: 'CASCADE'
 });
 
 Post.belongsTo(User, {
     foreignKey: 'user_id'
-
 });
 
 Comment.belongsTo(User, {
     foreignKey: 'user_id'
+});
 
+Post.hasMany(Comment, {
+    foreignKey: 'post_id',
+    onDelete: 'CASCADE'
 });
 
 Comment.belongsTo(Post, {

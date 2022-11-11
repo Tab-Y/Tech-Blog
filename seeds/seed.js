@@ -1,8 +1,8 @@
+const sequelize = require('../config/connections');
 const seedComments = require('./comment-seeds');
 const seedPosts = require('./post-seed');
 const seedUsers = require('./user-seed');
 
-const sequelize = require('../config/connections');
 
 const letTheSeedBegin = async () => {
     await sequelize.sync({force: true});        //makes the connection and forces new data in, resetting the database

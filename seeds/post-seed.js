@@ -9,12 +9,12 @@ const postData = [
     {
         title: "Pondering",
         description: "this is a test",
-        user_id: 1,
+        user_id: 2,
     },
     {
         title: "Hope",
         description: "this is a test",
-        user_id: 2,
+        user_id: 3,
     },
 ];
 
