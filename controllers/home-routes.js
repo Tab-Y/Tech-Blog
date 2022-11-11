@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('all-posts', { 
-      projects, 
+      posts, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -32,10 +32,10 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const posts = postData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
+    res.render('post', {
+      ...posts,
       logged_in: req.session.logged_in
     });
   } catch (err) {
