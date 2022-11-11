@@ -28,13 +28,6 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        comment: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'comments',
-                key: 'comment',
-            },
-        },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
