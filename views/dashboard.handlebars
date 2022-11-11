@@ -1,0 +1,21 @@
+<nav class="nav flex-column ml-3 col-1">
+    
+    <button type="button" class="btn btn-lg m-1" id="create-post">Create Post</button>
+
+</nav>
+
+<ul class="m-4">
+    {{#each posts as |post| }}
+    <li class="card custom-card m-2">
+        <h2 class="text-center">
+            <a href=`/post/{{post.id}}`>
+                {{post.title}}
+                <span class="details"> posted by {{post.user.username}} at {{format_date post.date_created}}</span>
+            </a>
+        </h2>
+        <p class="text-center">
+            {{post.description}}
+        </p>
+    </li>
+    {{/each}}
+</ul>
