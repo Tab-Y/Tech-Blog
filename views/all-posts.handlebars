@@ -1,3 +1,7 @@
+{{> header}}
+
+<main class="row"></main>
+
 {{#if logged_in}}
 <nav class="nav flex-column ml-3 col-1">
 
@@ -11,8 +15,8 @@
     <li class="card custom-card m-2">
         <h2 class="text-center">
             <a href=`/post/{{post.id}}`>
-            {{post.title}}
-            <span  class="details"> posted by {{post.user.username}} at {{format_date post.date_created}}</span>
+                {{post.title}}
+                <span class="details"> posted by {{post.user.username}} at {{format_date post.date_created}}</span>
             </a>
         </h2>
         <p class="text-center">
@@ -21,5 +25,6 @@
     </li>
     {{/each}}
 </ul>
+</main>
 
-    <script src="./js/new.js"></script>
+<script src="./js/new.js"></script>
