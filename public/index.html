@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,13 +13,15 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Signika+Negative:wght@500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="container-fluid">
     <header class="mx-auto">
         <nav class="nav">
             <ul class="row">
-                <li href="" class="button">Home</li>
+                <li href="" class="button"><a href=""> Home </a></li>
                 <li href="" class="button">Dashboard</li>
                 <li href="" class="button">Login</li>
             </ul>
@@ -27,37 +30,61 @@
             The Tech Blog
         </h1>
     </header>
-    <main>
+    <main class="">
         <!-- {{{body}}} -->
-        <ul>
-            <li class="card custom-card">
-                <h2>
-                    What is important
-                    <span class="details"> posted by + timestamp</span>
-                </h2>
-                <p>
-                    fine details as to what is important
-                </p>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"></span> <!-- turn into button for submit -->
+            </div>
+            <textarea class="form-control" aria-label="With textarea" id="comment-input"></textarea>
+            <!-- add comments -->
+        </div>
+        <button type="button" class="btn btn-lg btn-primary">Submit</button>
+        <div class="d-flex justify-content-center">
+            <div class="card d-flex" style="width: 18rem;">
+                <div class="card-body text-center">
+                    <h3 class="card-title mx-auto text-center">Log in</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Username</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput"
+                                placeholder="Please enter your username">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Password</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2"
+                                placeholder="Please enter your password">
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-lg btn-primary">Login</button>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-1"></div>
+            <li class="card custom-card col mr-3">
+                <h2>Would you like to add a comment?</h2>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><button type="button"
+                                class="btn btn-lg btn-primary">Submit</button></span>
+                        <!-- turn into button for submit -->
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea" id="comment-input"></textarea>
+                    <!-- add comments -->
+                </div>
+                <input class="form-control" type="text" placeholder="comments will be like this" readonly>
+                <!-- generated comments -->
             </li>
-            <li class="card custom-card">
-                <h2>
-                    What is important
-                    <span> posted by + timestamp</span>
-                </h2>
-                <p>
-                    fine details as to what is important
-                </p>
-            </li>
-            <li class="card custom-card">
-                <h2>
-                    What is important
-                    <span> posted by + timestamp</span>
-                </h2>
-                <p>
-                    fine details as to what is important
-                </p>
-            </li>
-        </ul>
+
+        </div>
+
     </main>
 </body>
+
 </html>

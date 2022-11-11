@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,18 +13,28 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Signika+Negative:wght@500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="container-fluid">
     <header class="mx-auto">
         <nav class="nav">
-            <ul class="row">
+            <ul class="row nav">
                 {{#if loggedIn}}
-                <li href="" class="button">Home</li>
-                <li href="" class="button">Dashboard</li>
-                <li href="" class="button">Logout</li>
+                <li class="nav-item">
+                    <a class="nav-link button" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" href="#">Logout</a>
+                </li>
                 {{else}}
-                <li href="" class="button">Login</li>
+                <li class="nav-item">
+                    <a class="nav-link button" href="#">Login</a>
+                </li>
                 {{/if}}
             </ul>
         </nav>
@@ -32,9 +43,10 @@
         </h1>
     </header>
     <main>
-        
+
         {{{body}}}
-       
+
     </main>
 </body>
+
 </html>

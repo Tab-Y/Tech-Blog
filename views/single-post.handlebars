@@ -1,0 +1,35 @@
+<ul>
+    <li class="card custom-card">
+        <h2>
+            <a href=`/post/{{id}}`>
+                {{title}}
+                <span class="details"> posted by {{user.name}} at {{format_date date_created}}</span>
+            </a>
+        </h2>
+        <p>
+            {{content}}
+        </p>
+    </li>
+</ul>
+<div class="row">
+
+    <div class="col-1"></div>
+    <li class="card custom-card col mr-3">
+        <h2>Would you like to add a comment?</h2>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><button type="button" class="btn btn-lg btn-primary"
+                        disabled>Submit</button></span> <!-- turn into button for submit -->
+            </div>
+            <textarea class="form-control" aria-label="With textarea" id="comment-input"></textarea>
+            <!-- add comments -->
+        </div>
+        {{#each comments as |comment|}}
+        <p>
+        {{comment.user.name}} commented at {{format_date comment.date_created}}
+        </p>
+        <input class="form-control" type="text" placeholder="{{comment.content}}" readonly>
+        <!-- generated comments -->
+    </li>
+
+</div>
