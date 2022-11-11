@@ -7,13 +7,18 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const sequelize = require('./config/connections');
 const helpers = require('./utils/helpers');
-const auth = require('./utils/auth')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: 'Super secret secret',
+  cookie: {
+    maxAge: 30 * 60 * 1000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: false,
 };
