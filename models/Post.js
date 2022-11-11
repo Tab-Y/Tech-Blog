@@ -24,6 +24,10 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         comment: {
             type: DataTypes.STRING,
             references: {
