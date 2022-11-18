@@ -1,19 +1,19 @@
-const loginFormHandler = async (event) => {
+const savePost = async (event) => {
     event.preventDefault();
 
     // Collect values from the login form
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const postTitle = document.querySelector('#title').value.trim();
+    const comment = document.querySelector('#content').value.trim();
 
-    if (username && password) {
-        const response = await fetch('/api/users/login', {
+    if (postTitle && comment) {
+        const response = await fetch('/api/posts', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ postTitle, comment }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');            // redirects to dashboard if login works
+            document.location.replace('/post');            // redirects to dashboard if login works
         } else {
             alert(response.statusText);
         }
@@ -22,4 +22,4 @@ const loginFormHandler = async (event) => {
 
 document
     .querySelector('#create-post')
-    .addEventListener('click', loginFormHandler);
+    .addEventListener('click', savePost);

@@ -13,7 +13,7 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');            // redirects to dashboard if login works
+            document.location.replace('/');            // redirects to dashboard if login works
         } else {
             alert(response.statusText);
         }

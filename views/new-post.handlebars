@@ -1,1 +1,22 @@
 {{> header}}
+
+<div class="d-flex justify-content-center m-4">
+    <div class="card d-flex" style="width: 18rem;">
+        <div class="card-body text-center">
+            <h3 class="card-title mx-auto text-center">Create New Post</h3>
+            <form>
+                <div class="form-group">
+                    <label for="postTitle">New Post title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Please add your post">
+                </div>
+                <div class="form-group">
+                    <label for="postContnent">content</label>
+                    <textarea name="content" id="content" cols="30" rows="10" placeholder="Please add your content"></textarea>
+                </div>
+            </form>
+            <button type="button" class="btn btn-lg btn-primary" id="create-post">Create</button>
+        </div>
+    </div>
+</div>
+
+<script src="./js/new.js"></script>

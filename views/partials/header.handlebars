@@ -1,28 +1,30 @@
-    <header class="mx-auto">
-        <nav class="nav">
-            <ul class="row nav ml-3">
-                {{#if logged_in}}
-                <li class="nav-item">
-                    <a class="nav-link button" href="/dashboard" id="dashboard-button">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link button" href="/" id="logout">Logout</a>
-                </li>
-                {{else}}
-                <li class="nav-item">
-                    <a class="nav-link button" href="/login" id="login-button">Login</a>
-                </li>
-                {{/if}}
-            </ul>
-        </nav>
-        <h1>
-            <a class="nav-link button" href="/" id="home-button">The Tech Blog</a>
-        </h1>
-    </header>
-{{#if logged_in}}
-<nav class="nav flex-column ml-3 col-1">
+<header class="mx-auto">
+    <nav class="nav">
+        <ul class="row nav ml-3">
+            {{#if logged_in}}
+            <li class="nav-item">
+                <a class="nav-link button" href="/dashboard" id="dashboard-button">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link button" href="/" id="logout">Logout</a>
+            </li>
+            <li>
+                <a class="nav-link button" href="/post" id="post-button">Create Post</a>
+            </li>
+            {{/if}}
+            {{#unless logged_in}}
+            <li class="nav-item">
+                <a class="nav-link button" href="/login" id="login-button">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link button" href="/signup" id="signup-button">Sign up</a>
+            </li>
+            {{/unless}}
 
-    <button type="button" class="btn btn-lg m-1" id="create-post" href="/post">Create Post</button>
+        </ul>
+    </nav>
+    <h1>
+        <a class="nav-link button" href="/" id="home-button">The Tech Blog</a>
 
-</nav>
-{{/if}}
+    </h1>
+</header>
