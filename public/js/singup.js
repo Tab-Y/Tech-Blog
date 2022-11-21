@@ -13,7 +13,7 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');        // redirects to dashboard if sign in works
+            document.location.replace('/dashboard');        // redirects to dashboard if sign in works
         } else {
             alert(response.statusText);
         }
