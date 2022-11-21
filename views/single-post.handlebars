@@ -1,22 +1,18 @@
 {{> header}}
 
-<nav class="nav flex-column ml-3 col-1">
-    <button type="button" class="btn btn-lg m-1" id="create-post" href="">Create Post</button>
-    <button type="button" class="btn btn-lg m-1" id="edit-post" href="">Edit Post</button>
-    <button type="button" class="btn btn-lg m-1" id="add-comment" href="#comment-input">Add Comment</button>
-</nav>
+{{> makePosts}}
 
 
 <ul class="m-4 col">
     <li class="card custom-card m-2">
         <h2 class="text-center">
-            <a href=`/post/{{post.id}}`>
-            {{post.title}}
-            <span  class="details"> posted by {{post.user.username}} at {{format_date post.date_created}}</span>
+            <a href='/post/{{id}}'>
+            {{title}}
+            <span  class="details"> posted by {{user.username}} at {{format_date date_created}}</span>
             </a>
         </h2>
         <p class="text-center">
-            {{post.description}}
+            {{description}}
         </p>
     </li>
 </ul>
@@ -25,7 +21,7 @@
     <div class="col-1"></div>
     <li class="card custom-card col mr-3">
         <h2>Would you like to add a comment?</h2>
-        <div class="input-group">
+        <div class="input-group" id="new-comment-form">
             <div class="input-group-prepend">
                 <span class="input-group-text"><button type="button" class="btn btn-lg btn-primary"
                         >Submit</button></span> <!-- turn into button for submit -->
@@ -35,10 +31,13 @@
         </div>
         {{#each comments as |comment|}}
         <p>
-        {{comment.user.name}} commented at {{format_date comment.date_created}}
+        {{comment.user.username}} commented at {{format_date comment.date_created}}
         </p>
-        <input class="form-control" type="text" placeholder="{{comment.content}}" readonly>
+        <input class="form-control" type="text" placeholder="{{comment.comment}}" readonly>
         <!-- generated comments -->
+        {{/each}}
     </li>
 
 </div>
+
+<script src="/js/comment.js"></script>

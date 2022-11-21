@@ -8,12 +8,15 @@ const savePost = async (event) => {
     if (postTitle && comment) {
         const response = await fetch('/api/posts', {
             method: 'POST',
-            body: JSON.stringify({ postTitle, comment }),
+            body: JSON.stringify({ 
+                title: postTitle, 
+                description: comment
+             }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/post');            // redirects to dashboard if login works
+            document.location.replace('/');            // redirects to dashboard if login works
         } else {
             alert(response.statusText);
         }

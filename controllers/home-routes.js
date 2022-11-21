@@ -39,14 +39,27 @@ router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
-        { model: User }, { model: Comment }
+        { model: User },
       ],
     });
 
+    const commentData = await Comment.findAll({
+      where: {
+        post_id: req.params.id
+      },
+      include: [
+        { model: User },
+        { model: Post },
+      ],
+    })
+    
     const posts = postData.get({ plain: true });
 
+    const comments = commentData.map((data) => data.get({ plain:true }));   
+ 
     res.render('single-post', {
       ...posts,
+      ...comments,
       logged_in: req.session.logged_in
     });
   } catch (err) {

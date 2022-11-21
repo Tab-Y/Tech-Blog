@@ -7,13 +7,13 @@
     {{#each posts as |post| }}
     <li class="card custom-card m-2">
         <h2 class="text-center">
-            <a href=`/post/{{post.id}}`>
-                {{post.title}}
-                <span class="details"> posted by {{post.user.username}} at {{format_date post.date_created}}</span>
+            <a href='/post/{{this.id}}'>
+                {{this.title}}
+                <span class="details"> posted by {{this.user.username}} at {{format_date this.date_created}}</span>
             </a>
         </h2>
         <p class="text-center">
-            {{post.description}}
+            {{this.description}}
         </p>
     </li>
     {{/each}}
